@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -69,9 +70,9 @@ export default function Home() {
       </section>
 
       <section className={styles.ctaArea}>
-        <a className={styles.startCta} href="#">
+        <Link className={styles.startCta} href="/modules">
           Beginnen
-        </a>
+        </Link>
       </section>
 
       <footer className={styles.footer}>

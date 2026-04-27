@@ -1,0 +1,186 @@
+.screen {
+  background: #faf6f0;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding-bottom: 32px;
+  box-shadow: 0 16px 40px rgba(84, 56, 36, 0.08);
+}
+
+.head {
+  padding: 40px 28px 24px;
+  animation: riseIn 520ms ease-out both;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #b8a898;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.h1 {
+  margin: 0 0 8px;
+  color: #3d2b1f;
+  font-family: var(--font-serif-display), Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.lead {
+  margin: 0;
+  color: #9a8070;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 28px 0;
+  animation: riseIn 580ms ease-out 80ms both;
+}
+
+.progressLabel {
+  color: #b8a898;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.progressTrack {
+  height: 4px;
+  flex: 1;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #e8d5b0;
+}
+
+.progressFill {
+  width: 16%;
+  height: 100%;
+  background: #c4673a;
+}
+
+.progressNum {
+  color: #9a8070;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.modules {
+  padding: 16px 20px 0;
+}
+
+.cardLink {
+  display: block;
+  margin: 0 0 10px;
+  color: inherit;
+  text-decoration: none;
+  animation: riseIn 600ms ease-out both;
+}
+
+.modCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 88px;
+  border: 0.5px solid #e8d5b0;
+  border-radius: 0 12px 12px 0;
+  background: #faf6f0;
+  padding: 18px 18px 18px 22px;
+}
+
+.cool {
+  background: #f4f8fa;
+  border-color: #d4e6ee;
+}
+
+.modAccent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+}
+
+.modBg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  pointer-events: none;
+}
+
+.modBg svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.modHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 6px;
+}
+
+.modNum {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.modLabel {
+  color: #b8a898;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.modTitle {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 4px;
+  color: #3d2b1f;
+  font-family: var(--font-serif-display), Georgia, serif;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.modSub {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #9a8070;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 500px) {
+  .screen {
+    margin: 28px auto;
+    border-radius: 18px;
+  }
+}
