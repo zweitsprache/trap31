@@ -1,0 +1,150 @@
+.screen {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #faf6f0;
+  font-family: var(--font-sans-condensed), system-ui, sans-serif;
+  box-shadow: 0 16px 40px rgba(84, 56, 36, 0.08);
+}
+
+.bgIllu {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgIllu svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.topBar {
+  position: relative;
+  padding: 32px 28px 0;
+  animation: riseIn 600ms ease-out both;
+}
+
+.langSwitch {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.langPill {
+  border: 0.5px solid #e8d5b0;
+  border-radius: 12px;
+  padding: 4px 10px;
+  background: rgba(250, 246, 240, 0.64);
+  color: #9a8070;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+.active {
+  border-color: #c4673a;
+  background: #c4673a;
+  color: #faf6f0;
+}
+
+.center {
+  position: relative;
+  padding: 78px 32px 30px;
+  text-align: center;
+  animation: riseIn 700ms ease-out 120ms both;
+}
+
+.wordmark {
+  margin: 0;
+  color: #3d2b1f;
+  font-family: var(--font-serif-display), Georgia, serif;
+  font-size: clamp(40px, 10vw, 46px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.tagline {
+  margin: 16px 0 0;
+  color: #c4673a;
+  font-family: var(--font-serif-display), Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.quoteBlock {
+  position: relative;
+  padding: 72px 36px 52px;
+  animation: riseIn 780ms ease-out 220ms both;
+}
+
+.quote {
+  margin: 0;
+  color: #7a5c48;
+  text-align: center;
+  font-family: var(--font-serif-display), Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.ctaArea {
+  position: relative;
+  padding: 24px 28px 46px;
+  text-align: center;
+  animation: riseIn 820ms ease-out 320ms both;
+}
+
+.startCta {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 14px 32px;
+  background: #c4673a;
+  color: #faf6f0;
+  font-family: var(--font-serif-display), Georgia, serif;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.startCta:hover,
+.startCta:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(130, 63, 35, 0.28);
+}
+
+.footer {
+  position: relative;
+  padding: 28px 28px 28px;
+  text-align: center;
+  animation: riseIn 880ms ease-out 420ms both;
+}
+
+.footer p {
+  margin: 0;
+  color: #b8a898;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 500px) {
+  .screen {
+    margin: 28px auto;
+    border-radius: 18px;
+    min-height: 760px;
+  }
+}

@@ -1,65 +1,86 @@
-import Image from "next/image";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className={styles.screen}>
+      <div className={styles.bgIllu} aria-hidden="true">
+        <svg viewBox="0 0 380 760" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M-20 280 Q80 220 180 250 Q280 280 410 220"
+            fill="none"
+            stroke="#E8D5B0"
+            strokeWidth="48"
+            strokeLinecap="round"
+            opacity="0.45"
+          />
+          <path
+            d="M-20 310 Q90 240 180 272 Q280 304 410 244"
+            fill="none"
+            stroke="#E8D5B0"
+            strokeWidth="22"
+            strokeLinecap="round"
+            opacity="0.3"
+          />
+          <path
+            d="M-20 248 Q70 200 180 224 Q280 248 410 200"
+            fill="none"
+            stroke="#C4673A"
+            strokeWidth="9"
+            strokeLinecap="round"
+            opacity="0.16"
+          />
+          <path
+            d="M-20 700 Q90 660 200 680 Q310 700 420 660"
+            fill="none"
+            stroke="#E8D5B0"
+            strokeWidth="38"
+            strokeLinecap="round"
+            opacity="0.4"
+          />
+          <path
+            d="M-20 720 Q90 686 200 706 Q310 724 420 690"
+            fill="none"
+            stroke="#E8D5B0"
+            strokeWidth="18"
+            strokeLinecap="round"
+            opacity="0.28"
+          />
+        </svg>
+      </div>
+
+      <div className={styles.topBar}>
+        <div className={styles.langSwitch}>
+          <span className={`${styles.langPill} ${styles.active}`}>DE</span>
+          <span className={styles.langPill}>UA</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+
+      <section className={styles.center}>
+        <p className={styles.wordmark}>arivio</p>
+        <p className={styles.tagline}>Willkommen bei Dir</p>
+      </section>
+
+      <section className={styles.quoteBlock}>
+        <p className={styles.quote}>
+          Du musst nicht alles alleine tragen. arivio gibt Dir einen ruhigen Raum,
+          um anzukommen, durchzuatmen und Deinen eigenen Weg Schritt fur Schritt
+          wiederzufinden.
+        </p>
+      </section>
+
+      <section className={styles.ctaArea}>
+        <a className={styles.startCta} href="#">
+          Beginnen
+        </a>
+      </section>
+
+      <footer className={styles.footer}>
+        <p>
+          Diese Materialien ersetzen keine professionelle Begleitung.
+          <br />
+          Bei Bedarf: Dargebotene Hand 143 · taglich, 24h
+        </p>
+      </footer>
+    </main>
   );
 }
