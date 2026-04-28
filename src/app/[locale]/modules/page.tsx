@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 import styles from "./page.module.css";
 
 type ModuleCard = {
@@ -14,7 +15,7 @@ type ModuleCard = {
 const cards: ModuleCard[] = [
   {
     id: 1,
-    title: "Dein Koerper hat aufgepasst",
+    title: "Dein Körper hat aufgepasst",
     subtitle: "Verstehen, was passiert ist",
     accent: "#C4673A",
     href: "/modules/1",
@@ -43,7 +44,7 @@ const cards: ModuleCard[] = [
   {
     id: 3,
     title: "Was in dir vorgeht",
-    subtitle: "Wahrnehmen, was dein Koerper dir sagt",
+    subtitle: "Wahrnehmen, was dein Körper dir sagt",
     accent: "#E8A87C",
     href: "#",
     bg: (
@@ -56,8 +57,8 @@ const cards: ModuleCard[] = [
   },
   {
     id: 4,
-    title: "Hier ankommen",
-    subtitle: "Spueren, dass dieser Moment sicher ist",
+    title: "Hier und jetzt ankommen",
+    subtitle: "Spüren, dass dieser Moment sicher ist",
     accent: "#7A4F35",
     href: "#",
     bg: (
@@ -99,9 +100,19 @@ const cards: ModuleCard[] = [
   },
 ];
 
-export default function ModulesPage() {
+export default async function ModulesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <main className={styles.screen}>
+      <div className={styles.topBar}>
+        <LocaleSwitcher />
+      </div>
+
       <header className={styles.head}>
         <p className={styles.eyebrow}>DEINE REISE</p>
         <h1 className={styles.h1}>Sechs Module</h1>
@@ -111,17 +122,13 @@ export default function ModulesPage() {
         </p>
       </header>
 
-      <section className={styles.progress}>
-        <span className={styles.progressLabel}>FORTSCHRITT</span>
-        <div className={styles.progressTrack}>
-          <div className={styles.progressFill} />
-        </div>
-        <span className={styles.progressNum}>1 / 6</span>
-      </section>
-
       <section className={styles.modules}>
         {cards.map((card) => (
-          <Link key={card.id} className={styles.cardLink} href={card.href}>
+          <Link
+            key={card.id}
+            className={styles.cardLink}
+            href={card.href === "#" ? card.href : `/${locale}${card.href}`}
+          >
             <article className={`${styles.modCard} ${card.cool ? styles.cool : ""}`}>
               <span className={styles.modAccent} style={{ background: card.accent }} />
               <div className={styles.modBg}>{card.bg}</div>
@@ -135,7 +142,6 @@ export default function ModulesPage() {
                 >
                   {card.id}
                 </span>
-                <span className={styles.modLabel}>MODUL {card.id}</span>
               </div>
               <p className={styles.modTitle}>{card.title}</p>
               <p className={styles.modSub}>{card.subtitle}</p>

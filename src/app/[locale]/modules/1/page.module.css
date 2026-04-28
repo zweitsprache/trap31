@@ -6,19 +6,25 @@
   min-height: 100dvh;
 }
 
+.topBar {
+  padding-block-start: 24px;
+  padding-inline: 28px;
+  animation: riseIn 520ms ease-out both;
+}
+
 .hero {
   position: relative;
   isolation: isolate;
   min-height: 0;
   background: #faf6f0;
-  margin: 0 0 28px;
+  margin-block-end: 28px;
   overflow: visible;
 }
 
 .heroBg {
   position: absolute;
   inset: 0;
-  right: -28px;
+  inset-inline-end: -28px;
   overflow: visible;
 }
 
@@ -30,9 +36,9 @@
 
 .accent {
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  inset-block-end: 0;
   width: 6px;
   background: #c4673a;
   border-radius: 999px;
@@ -40,11 +46,11 @@
 
 .heroContent {
   position: relative;
-  padding: 28px 28px 28px;
+  padding: 28px;
 }
 
 .badgeContainer {
-  margin-bottom: 16px;
+  margin-block-end: 16px;
 }
 
 .moduleBadge {
@@ -61,7 +67,7 @@
 }
 
 .sub {
-  margin: 10px 0 0;
+  margin-block-start: 10px;
   color: #3d2b1f;
   font-size: 16px;
 }
@@ -78,13 +84,15 @@
 }
 
 .body {
-  padding: 28px 28px 48px;
+  padding-inline: 28px;
+  padding-block: 28px 48px;
   animation: riseIn 650ms ease-out 120ms both;
 }
 
 .quote {
-  margin: 0 0 28px;
-  padding: 20px 22px;
+  margin-block-end: 28px;
+  padding-inline: 22px;
+  padding-block: 20px;
   border-radius: 12px;
   background: #f2ebe0;
 }
@@ -93,20 +101,32 @@
   margin: 0;
   color: #c4673a;
   font-family: var(--font-serif-display), Georgia, serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
 }
 
 .sectionLabel {
-  margin: 0 0 12px;
+  margin-block-end: 12px;
   color: #3d2b1f;
   font-size: 11px;
   letter-spacing: 0.08em;
 }
 
+.visual {
+  margin-block: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.visualImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .bodyText {
-  margin: 0 0 20px;
+  margin-block-end: 20px;
   color: #3d2b1f;
   font-size: 16px;
   line-height: 1.75;
@@ -116,15 +136,16 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin: 0 0 20px;
+  margin-block-end: 20px;
   padding: 0;
   list-style: none;
 }
 
 .chip {
-  padding: 10px 16px;
+  padding-block: 10px;
+  padding-inline: 16px;
   border: 0.5px solid #e8d5b0;
-  border-left: 5px solid #c4673a;
+  border-inline-start: 5px solid #c4673a;
   border-radius: 8px;
   color: #7a5c48;
   font-size: 16px;
@@ -134,12 +155,13 @@
 
 .merksatz {
   position: relative;
-  margin: 0 0 28px;
+  margin-block-end: 28px;
   border-radius: 8px;
-  border-left: 5px solid rgba(255,255,255,0.35);
+  border-inline-start: 5px solid rgba(255,255,255,0.35);
   background: linear-gradient(105deg, #c4673a 0%, #b85a30 100%);
   color: #faf6f0;
-  padding: 12px 22px;
+  padding-inline: 22px;
+  padding-block: 12px;
   overflow: hidden;
 }
 
@@ -163,7 +185,7 @@
 }
 
 .exerciseName {
-  margin: 0 0 16px;
+  margin-block-end: 16px;
   color: #3d2b1f;
   font-family: var(--font-serif-display), Georgia, serif;
   font-size: 20px;
@@ -175,14 +197,16 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin: 0 0 12px;
+  margin-block-end: 12px;
   border: 0.5px solid #e8d5b0;
-  border-left: 5px solid #c4673a;
+  border-inline-start: 5px solid #c4673a;
   border-radius: 8px;
   background:
     radial-gradient(circle at 92% 18%, rgba(196, 103, 58, 0.09), transparent 44%),
     #f3eee5;
-  padding: 16px 18px 16px 16px;
+  padding-inline: 18px;
+  padding-block: 16px;
+  padding-inline-start: 16px;
   box-shadow: 0 6px 14px rgba(122, 92, 72, 0.08);
 }
 
@@ -210,11 +234,12 @@
 }
 
 .reflection {
-  margin: 0 0 28px;
+  margin-block-end: 28px;
   border: 0.5px solid #e8d5b0;
   border-radius: 8px;
   background: #faf6f0;
-  padding: 18px 20px;
+  padding-inline: 20px;
+  padding-block: 18px;
 }
 
 .reflection p {

@@ -1,24 +1,16 @@
 import Link from "next/link";
-import { localeNames, locales } from "@/i18n/config";
-import styles from "./landing.module.css";
+import { getTranslations } from "next-intl/server";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import styles from "./page.module.css";
 
-type LanguageOption =
-  | { key: string; label: string; href: string }
-  | { key: string; label: string; href?: undefined };
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
 
-const languageOptions: LanguageOption[] = [
-  ...locales.map((locale) => ({
-    key: locale,
-    label: localeNames[locale],
-    href: `/${locale}`,
-  })),
-  ...Array.from({ length: 15 }, (_, index) => ({
-    key: `placeholder-${index + 4}`,
-    label: `Language ${index + 4}`,
-  })),
-];
-
-export default function RootPage() {
   return (
     <main className={styles.screen}>
       <div className={styles.bgIllu} aria-hidden="true">
@@ -66,22 +58,32 @@ export default function RootPage() {
         </svg>
       </div>
 
-      <section className={styles.panel}>
-        <p className={styles.wordmark}>arivio</p>
-        <div className={styles.languageGrid}>
-          {languageOptions.map((option) => (
-            option.href ? (
-              <Link key={option.key} href={option.href} className={styles.languageCard}>
-                {option.label}
-              </Link>
-            ) : (
-              <div key={option.key} className={`${styles.languageCard} ${styles.placeholderCard}`}>
-                {option.label}
-              </div>
-            )
-          ))}
+      <div className={styles.topBar}>
+        <LocaleSwitcher />
+      </div>
+
+      <section className={styles.center}>
+        <p className={styles.wordmark}>{t("wordmark")}</p>
+        <p className={styles.tagline}>{t("tagline")}</p>
+      </section>
+
+      <section className={styles.quoteBlock}>
+        <div className={styles.quote}>
+          <p>{t("body1")}</p>
+          <p>{t("body2")}</p>
+          <p>{t("body3")}</p>
         </div>
       </section>
+
+      <section className={styles.ctaArea}>
+        <Link className={styles.startCta} href={`/${locale}/modules`}>
+          {t("cta")}
+        </Link>
+      </section>
+
+      <footer className={styles.footer}>
+        <p>{t("footer")}</p>
+      </footer>
     </main>
   );
 }

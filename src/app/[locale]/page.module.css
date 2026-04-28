@@ -23,7 +23,7 @@
 
 .topBar {
   position: relative;
-  padding-block-start: 32px;
+  padding-block-start: 24px;
   padding-inline: 28px;
   animation: riseIn 600ms ease-out both;
 }
@@ -52,7 +52,8 @@
 
 .center {
   position: relative;
-  padding: 78px 32px 30px;
+  padding-block: 78px 30px;
+  padding-inline: 28px;
   text-align: center;
   animation: riseIn 700ms ease-out 120ms both;
 }
@@ -68,7 +69,8 @@
 }
 
 .tagline {
-  margin: 16px 0 0;
+  margin-block-start: 16px;
+  margin-block-end: 0;
   color: #c4673a;
   font-family: var(--font-serif-display), Georgia, serif;
   font-size: 22px;
@@ -78,7 +80,8 @@
 
 .quoteBlock {
   position: relative;
-  padding: 72px 36px 52px;
+  padding-block: 72px 52px;
+  padding-inline: 28px;
   animation: riseIn 780ms ease-out 220ms both;
 }
 
@@ -87,13 +90,14 @@
   color: #7a5c48;
   text-align: center;
   font-family: var(--font-serif-display), Georgia, serif;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.7;
 }
 
 .ctaArea {
   position: relative;
-  padding: 24px 28px 46px;
+  padding-block: 24px 46px;
+  padding-inline: 28px;
   text-align: center;
   animation: riseIn 820ms ease-out 320ms both;
 }
@@ -101,7 +105,8 @@
 .startCta {
   display: inline-block;
   border-radius: 8px;
-  padding: 14px 32px;
+  padding-inline: 32px;
+  padding-block: 14px;
   background: #c4673a;
   color: #faf6f0;
   font-family: var(--font-serif-display), Georgia, serif;
@@ -118,7 +123,7 @@
 
 .footer {
   position: relative;
-  padding: 28px 28px 28px;
+  padding: 28px;
   text-align: center;
   animation: riseIn 880ms ease-out 420ms both;
 }
@@ -140,4 +145,3 @@
     transform: translateY(0);
   }
 }
-

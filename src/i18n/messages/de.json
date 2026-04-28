@@ -1,0 +1,43 @@
+{
+  "common": {
+    "appName": "arivio",
+    "progress": "Fortschritt"
+  },
+  "home": {
+    "wordmark": "arivio",
+    "tagline": "Willkommen bei Dir",
+    "body1": "Nach schweren Zeiten bleibt oft eine Unruhe - im Körper, im Schlaf, in den Gedanken.",
+    "body2": "Hier ist ein ruhiger Ort. Mit ein paar Worten, ein paar Hinweisen, ein paar einfachen Übungen.",
+    "body3": "Du nimmst Dir, was Du brauchst.",
+    "cta": "Beginnen",
+    "footer": "Diese Materialien ersetzen keine professionelle Begleitung. Bei Bedarf: Dargebotene Hand 143 · täglich, 24h"
+  },
+  "modules": {
+    "title": "Module",
+    "subtitle": "Wählen Sie ein Modul, um zu beginnen",
+    "module1": {
+      "title": "Dein Körper hat aufgepasst",
+      "subtitle": "Verstehen, was passiert ist"
+    },
+    "module2": {
+      "title": "Körper und Geist",
+      "subtitle": "Die Verbindung verstehen"
+    },
+    "module3": {
+      "title": "Spüren und fühlen",
+      "subtitle": "Mit deinem Körper verbinden"
+    },
+    "module4": {
+      "title": "Hier und jetzt ankommen",
+      "subtitle": "Spüren, dass dieser Moment sicher ist"
+    },
+    "module5": {
+      "title": "Sicherheit aufbauen",
+      "subtitle": "Schritte zum Wohlbefinden"
+    },
+    "module6": {
+      "title": "Die Reise geht weiter",
+      "subtitle": "Deine Heilung unterstützen"
+    }
+  }
+}

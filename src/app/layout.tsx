@@ -1,50 +1,57 @@
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import {
   Encode_Sans_Semi_Condensed,
-  Geist,
   Geist_Mono,
-  Noto_Serif,
+  PT_Serif,
 } from "next/font/google";
+import { getLocale } from "next-intl/server";
+import { isRTL } from "@/i18n/config";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-const serifDisplay = Noto_Serif({
+const serifDisplay = PT_Serif({
   variable: "--font-serif-display",
-  weight: ["400", "500"],
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
 const sansCondensed = Encode_Sans_Semi_Condensed({
   variable: "--font-sans-condensed",
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "arivio",
-  description: "Mobile-first companion app start page",
+  description: "Mobile-first companion app",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+  const rtl = isRTL[locale as keyof typeof isRTL] || false;
+
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${serifDisplay.variable} ${sansCondensed.variable} h-full antialiased`}
+      lang={locale}
+      dir={rtl ? "rtl" : "ltr"}
+      className={`${geistMono.variable} ${serifDisplay.variable} ${sansCondensed.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

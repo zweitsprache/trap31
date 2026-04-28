@@ -1,0 +1,33 @@
+.switcher {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 8px 14px;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  background: #f5f5f5;
+  color: #3d2b1f;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+}
+
+.button:hover {
+  border-color: #c4673a;
+  background: #faf6f0;
+}
+
+.active {
+  border-color: #c4673a;
+  background: #c4673a;
+  color: #faf6f0;
+}
+
+.active:hover {
+  background: #b85a30;
+  border-color: #b85a30;
+}

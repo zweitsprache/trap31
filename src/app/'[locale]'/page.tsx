@@ -1,24 +1,8 @@
 import Link from "next/link";
-import { localeNames, locales } from "@/i18n/config";
-import styles from "./landing.module.css";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import styles from "./page.module.css";
 
-type LanguageOption =
-  | { key: string; label: string; href: string }
-  | { key: string; label: string; href?: undefined };
-
-const languageOptions: LanguageOption[] = [
-  ...locales.map((locale) => ({
-    key: locale,
-    label: localeNames[locale],
-    href: `/${locale}`,
-  })),
-  ...Array.from({ length: 15 }, (_, index) => ({
-    key: `placeholder-${index + 4}`,
-    label: `Language ${index + 4}`,
-  })),
-];
-
-export default function RootPage() {
+export default function Home() {
   return (
     <main className={styles.screen}>
       <div className={styles.bgIllu} aria-hidden="true">
@@ -66,22 +50,36 @@ export default function RootPage() {
         </svg>
       </div>
 
-      <section className={styles.panel}>
+      <div className={styles.topBar}>
+        <LocaleSwitcher />
+      </div>
+
+      <section className={styles.center}>
         <p className={styles.wordmark}>arivio</p>
-        <div className={styles.languageGrid}>
-          {languageOptions.map((option) => (
-            option.href ? (
-              <Link key={option.key} href={option.href} className={styles.languageCard}>
-                {option.label}
-              </Link>
-            ) : (
-              <div key={option.key} className={`${styles.languageCard} ${styles.placeholderCard}`}>
-                {option.label}
-              </div>
-            )
-          ))}
-        </div>
+        <p className={styles.tagline}>Willkommen bei Dir</p>
       </section>
+
+      <section className={styles.quoteBlock}>
+        <p className={styles.quote}>
+          Du musst nicht alles alleine tragen. arivio gibt Dir einen ruhigen Raum,
+          um anzukommen, durchzuatmen und Deinen eigenen Weg Schritt für Schritt
+          wiederzufinden.
+        </p>
+      </section>
+
+      <section className={styles.ctaArea}>
+        <Link className={styles.startCta} href="/modules">
+          Beginnen
+        </Link>
+      </section>
+
+      <footer className={styles.footer}>
+        <p>
+          Diese Materialien ersetzen keine professionelle Begleitung.
+          <br />
+          Bei Bedarf: Dargebotene Hand 143 · täglich, 24h
+        </p>
+      </footer>
     </main>
   );
 }
