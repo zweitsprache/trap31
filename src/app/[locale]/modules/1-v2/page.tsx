@@ -37,7 +37,7 @@ export default async function ModuleOneV2Page({
       <div className={styles.slider}>
         <section className={styles.slide}>
           <p className={styles.eyebrow}>MODUL 1</p>
-          <h1 className={styles.h1}>Dein Körper hat aufgepasst</h1>
+          <h1 className={styles.h1}>Dein Wächter hat aufgepasst</h1>
           <p className={styles.sub}>Verstehen, was passiert ist</p>
         </section>
 

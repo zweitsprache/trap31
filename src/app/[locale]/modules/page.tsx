@@ -15,7 +15,7 @@ type ModuleCard = {
 const cards: ModuleCard[] = [
   {
     id: 1,
-    title: "Dein Körper hat aufgepasst",
+    title: "Dein Wächter hat aufgepasst",
     subtitle: "Verstehen, was passiert ist",
     accent: "#C4673A",
     href: "/modules/1",

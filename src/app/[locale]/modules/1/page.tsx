@@ -38,7 +38,7 @@ export default async function ModuleOnePage({
             <div className={styles.badgeContainer}>
               <span className={styles.moduleBadge}>1</span>
             </div>
-            <h1 className={styles.h1}>Dein Körper hat aufgepasst</h1>
+            <h1 className={styles.h1}>Dein Wächter hat aufgepasst</h1>
             <p className={styles.sub}>Verstehen, was passiert ist</p>
           </div>
         </header>
