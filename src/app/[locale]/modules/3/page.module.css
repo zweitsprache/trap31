@@ -1,11 +1,13 @@
 .screen {
   background: #faf6f0;
   min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 .slider {
   height: 100dvh;
   overflow-y: auto;
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -17,6 +19,7 @@
 
 .slide {
   position: relative;
+  overflow: hidden;
   min-height: 100dvh;
   scroll-snap-align: start;
   display: flex;
