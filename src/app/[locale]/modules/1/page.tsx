@@ -15,11 +15,12 @@ function SlideBrand() {
 }
 
 const chips = [
-  "Anspannung ohne Grund",
-  "Schreckhaftigkeit",
-  "Schlafprobleme",
-  "Gedanken die auftauchen",
-  "Das Gefühl neben sich zu sein",
+  "Dein Körper ist angespannt, ohne dass Du weisst warum.",
+  "Du erschrickst bei lauten Geräuschen oder unerwarteten Bewegungen.",
+  "Du kannst nicht gut schlafen.",
+  "Schreckliche Gedanken oder Bilder tauchen plötzlich auf.",
+  "Du fühlst Dich, als wärst Du neben Dir.",
+  "Du bist gereizt oder erschöpft.",
 ];
 
 const steps = [
@@ -44,35 +45,39 @@ export default async function ModuleOneV2Page({
           <SlideBrand />
           <img src="/logos/sihlspace_003a_white.svg" alt="" className={styles.slideLogo} />
           <span className={styles.bgNumber} aria-hidden="true">1</span>
+          <p className={styles.sub}>VERSTEHEN, WAS PASSIERT IST</p>
           <h1 className={styles.h1}>Dein Wächter hat aufgepasst</h1>
-          <p className={styles.sub}>Verstehen, was passiert ist</p>
         </section>
 
         <section className={`${styles.slide} ${styles.quoteSlide}`}>
           <SlideBrand />
           <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
+          <p className={styles.storyLabel}>DEINE GESCHICHTE</p>
           <div className={styles.quote}>
-            <p>Du hast schwere Dinge erlebt.</p>
-            <p>Dein Körper hat genau das getan, wofür er gemacht wurde:</p>
-            <p>Er hat dich geschützt.</p>
+            <p>Du hast in der Vergangenheit vielleicht schwere Dinge erlebt.</p>
+            <p>Vielleicht in Deinem Heimatland, vielleicht auf dem Weg in die Schweiz.</p>
+            <p>Dein Körper hat in diesen schwierigen Situationen etwas ganz wichtiges gemacht:</p>
+            <p><strong>Er hat Dich beschützt.</strong></p>
           </div>
         </section>
 
         <section className={`${styles.slide} ${styles.accentSlide}`}>
           <SlideBrand />
           <img src="/logos/sihlspace_003a_white.svg" alt="" className={styles.slideLogo} />
+          <p className={styles.storyLabel}>WAS PASSIERT BEI GEFAHR?</p>
           <p className={styles.bodyLarge}>Wenn wir in grosser Gefahr sind, schaltet unser Körper sofort in einen besonderen Modus.</p>
-          <p className={styles.bodyLarge}>Automatisch.</p>
-          <p className={styles.bodyLarge}>Ohne dass wir etwas tun müssen.</p>
+          <p className={styles.bodyLarge}>Ohne, dass wir etwas tun müssen.</p>
+          <p className={styles.bodyLarge}><strong>Automatisch.</strong></p>
         </section>
 
         <section className={styles.slide}>
           <SlideBrand />
           <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
+          <p className={styles.storyLabel}>WIE FUNKTIONIERT DAS?</p>
           <div className={`${styles.quote} ${styles.quoteNeutral}`}>
             <p>Stell dir vor, dein Gehirn hat einen Wächter.</p>
-            <p>Er schläft nie.</p>
             <p>Wenn er Gefahr erkennt, gibt er Alarm – und dein Körper reagiert sofort.</p>
+            <p><strong>Er schläft nie.</strong></p>
           </div>
         </section>
 
@@ -86,12 +91,12 @@ export default async function ModuleOneV2Page({
         <section className={styles.slide}>
           <SlideBrand />
           <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
-          <p className={styles.sectionLabel}>WARUM IST ES NOCH DA?</p>
-          <p className={styles.bodyText}>
-            Der Wächter hat gelernt: die Welt ist gefährlich. Das vergisst er nicht
-            so schnell. Auch wenn Du heute an einem sicheren Ort bist. Deshalb kannst
-            du heute noch spüren:
-          </p>
+          <p className={styles.storyLabel}>WARUM IST ES NOCH DA?</p>
+          <div className={`${styles.quote} ${styles.quoteNeutral}`}>
+            <p>Aus Deiner Geschichte hat der Wächter gelernt: Die Welt ist gefährlich.</p>
+            <p>Das kann er nicht so schnell vergessen. Darum beschützt er Dich noch heute.</p>
+            <p><strong>Auch wenn Du heute an einem sichereren Ort bist.</strong></p>
+          </div>
         </section>
 
         <ReactionSlides chips={chips} />
@@ -100,7 +105,8 @@ export default async function ModuleOneV2Page({
           <SlideBrand />
           <img src="/logos/sihlspace_003a_white.svg" alt="" className={styles.slideLogo} />
           <div className={styles.merksatz}>
-            <p>Was Du erlebt hast, ist nicht normal. Wie Du heute reagierst, ist normal.</p>
+            <p>Was Du erlebt hast, ist <strong>nicht</strong> <strong>normal</strong>.</p>
+            <p>Wie Du heute reagierst, ist <strong>normal</strong>.</p>
           </div>
         </section>
 
