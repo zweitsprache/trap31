@@ -5,9 +5,11 @@ import styles from "./page.module.css";
 
 type Props = {
   chips: string[];
+  progressStep: number;
+  progressTotal: number;
 };
 
-export default function ReactionSlides({ chips }: Props) {
+export default function ReactionSlides({ chips, progressStep, progressTotal }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartXRef = useRef<number | null>(null);
   const touchStartYRef = useRef<number | null>(null);
@@ -64,7 +66,7 @@ export default function ReactionSlides({ chips }: Props) {
         <span className={styles.slideBrandSecondary}> | Willkommen bei Dir</span>
       </p>
       <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
-      <p className={styles.storyLabel}>REAKTION</p>
+      <p className={styles.storyLabel}>KENNST DU DAS?</p>
       <div
         className={styles.reactionCarousel}
         onTouchStart={onTouchStart}
@@ -92,6 +94,19 @@ export default function ReactionSlides({ chips }: Props) {
             aria-current={index === activeIndex ? "true" : undefined}
           />
         ))}
+      </div>
+      <div
+        className={styles.slideProgress}
+        role="progressbar"
+        aria-label="Lesefortschritt"
+        aria-valuemin={1}
+        aria-valuemax={progressTotal}
+        aria-valuenow={progressStep}
+      >
+        <span
+          className={styles.slideProgressFill}
+          style={{ width: `${(progressStep / progressTotal) * 100}%` }}
+        />
       </div>
     </section>
   );

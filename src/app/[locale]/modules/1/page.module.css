@@ -44,6 +44,25 @@
   padding-block: 90px 28px;
 }
 
+.slideProgress {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: 4px;
+  border-radius: 0;
+  background: rgba(92, 68, 51, 0.22);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.slideProgressFill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #5c4433;
+}
+
 .slideLogo {
   position: absolute;
   inset-block-start: 20px;
@@ -145,6 +164,18 @@
   color: #faf6f0;
 }
 
+.slide:first-child .slideProgress,
+.slide.accentSlide .slideProgress,
+.slide.merksatzSlide .slideProgress {
+  background: rgba(250, 246, 240, 0.28);
+}
+
+.slide:first-child .slideProgressFill,
+.slide.accentSlide .slideProgressFill,
+.slide.merksatzSlide .slideProgressFill {
+  background: #faf6f0;
+}
+
 .slide:first-child .eyebrow {
   color: #faf6f0;
 }
@@ -166,6 +197,32 @@
 .slide.merksatzSlide {
   background: #5C4433;
   background-image: none;
+}
+
+.slide.merksatzSlideLight {
+  background-image: none;
+}
+
+.merksatzSlideLight .merksatz {
+  margin-block-start: 0;
+  border: 0;
+  border-inline-start: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.merksatzSlideLight .merksatz p {
+  margin: 0 0 12px;
+  text-align: center;
+  color: #3d2b1f;
+  font-family: var(--font-sans-condensed), system-ui, sans-serif;
+  font-size: clamp(30px, 8vw, 42px);
+  line-height: 1.25;
+}
+
+.merksatzSlideLight .merksatz p:last-child {
+  margin-bottom: 0;
 }
 
 .merksatzSlide .merksatz {
@@ -205,7 +262,7 @@
   font-family: var(--font-sans-condensed), system-ui, sans-serif;
   font-size: clamp(30px, 7.6vw, 40px);
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.35;
 }
 
 .sub {
@@ -225,10 +282,18 @@
 
 .storyLabel {
   width: 100%;
-  margin: 0;
+  margin: 0 0 18px;
   color: #5C4433;
   font-size: 18px;
   text-transform: uppercase;
+}
+
+.storyLabel + .quote {
+  margin-block-start: 0;
+}
+
+.storyLabel + .reactionCarousel {
+  margin-block-start: 0;
 }
 
 .quote p {
@@ -269,9 +334,17 @@
   line-height: 1.35;
 }
 
+.bodyLargeBottom {
+  margin-bottom: 12px;
+}
+
 .slide.accentSlide {
   background: #5C4433;
-  gap: 20px;
+  gap: 0;
+}
+
+.slide.accentSlide .bodyLarge + .bodyLarge {
+  margin-top: 20px;
 }
 
 .slide.accentSlide .bodyLarge {
@@ -279,6 +352,14 @@
 }
 
 .slide.accentSlide .storyLabel {
+  color: #faf6f0;
+}
+
+.slide.accentSlide .quoteNeutral p {
+  color: #faf6f0;
+}
+
+.slide.accentSlide .quote p {
   color: #faf6f0;
 }
 
@@ -444,7 +525,7 @@
 
 .exerciseName {
   width: 100%;
-  margin: 0;
+  margin: 0 0 12px;
   color: #3d2b1f;
   font-family: var(--font-sans-condensed), system-ui, sans-serif;
   font-size: 24px;
@@ -478,9 +559,8 @@
 
 .exerciseCarousel {
   width: 100%;
-  margin-block-start: 16px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 .exerciseTrack {
@@ -500,8 +580,9 @@
   min-height: 100%;
   gap: 12px;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 0;
   border: 1px solid rgba(205, 178, 156, 0.4);
+  border-top: 0;
   background: rgba(255, 252, 247, 0.8);
   box-shadow: 0 10px 24px rgba(74, 51, 40, 0.08);
   padding: 14px 16px;
@@ -509,7 +590,7 @@
 
 .exerciseDots {
   width: 100%;
-  margin-block: 12px 16px;
+  margin-block: 10px 0;
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -530,7 +611,8 @@
 
 .video {
   width: 100%;
-  border-radius: 10px;
+  margin-block-start: 12px;
+  border-radius: 10px 10px 0 0;
   display: block;
 }
 
@@ -587,9 +669,11 @@
 }
 
 .stepText {
+  width: 100%;
   color: #3d2b1f;
-  font-size: clamp(24px, 6vw, 34px);
+  font-size: clamp(18px, 4.6vw, 25px);
   line-height: 1.35;
+  text-align: center;
 }
 
 .reflection {

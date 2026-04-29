@@ -5,9 +5,11 @@ import styles from "./page.module.css";
 
 type Props = {
   steps: string[];
+  progressStep: number;
+  progressTotal: number;
 };
 
-export default function ExerciseSlides({ steps }: Props) {
+export default function ExerciseSlides({ steps, progressStep, progressTotal }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartXRef = useRef<number | null>(null);
   const touchStartYRef = useRef<number | null>(null);
@@ -76,37 +78,7 @@ export default function ExerciseSlides({ steps }: Props) {
       </p>
       <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
       <p className={styles.storyLabel}>ÜBUNG</p>
-      <p className={styles.exerciseName}>Den Wächter beruhigen</p>
-      <div
-        className={styles.exerciseCarousel}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-      >
-        <div
-          className={styles.exerciseTrack}
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-        >
-          {steps.map((step) => (
-            <div key={step} className={styles.exerciseItem}>
-              <div className={styles.exerciseCard}>
-                <span className={styles.stepText}>{step}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className={styles.exerciseDots} aria-label="Übung Schritte">
-        {steps.map((step, index) => (
-          <button
-            key={`exercise-dot-${step}`}
-            type="button"
-            className={`${styles.exerciseDot} ${index === activeIndex ? styles.exerciseDotActive : ""}`}
-            onClick={() => setActiveIndex(index)}
-            aria-label={`Schritt ${index + 1}`}
-            aria-current={index === activeIndex ? "true" : undefined}
-          />
-        ))}
-      </div>
+      <p className={styles.exerciseName}>Deinen inneren Helfer beruhigen</p>
       <video
         ref={videoRef}
         className={styles.video}
@@ -127,6 +99,49 @@ export default function ExerciseSlides({ steps }: Props) {
           setActiveIndex(steps.length - 1);
         }}
       />
+        <div
+          className={styles.exerciseCarousel}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          <div
+            className={styles.exerciseTrack}
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          >
+            {steps.map((step) => (
+              <div key={step} className={styles.exerciseItem}>
+                <div className={styles.exerciseCard}>
+                  <span className={styles.stepText}>{step}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={styles.exerciseDots} aria-label="Übung Schritte">
+          {steps.map((step, index) => (
+            <button
+              key={`exercise-dot-${step}`}
+              type="button"
+              className={`${styles.exerciseDot} ${index === activeIndex ? styles.exerciseDotActive : ""}`}
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Schritt ${index + 1}`}
+              aria-current={index === activeIndex ? "true" : undefined}
+            />
+          ))}
+        </div>
+      <div
+        className={styles.slideProgress}
+        role="progressbar"
+        aria-label="Lesefortschritt"
+        aria-valuemin={1}
+        aria-valuemax={progressTotal}
+        aria-valuenow={progressStep}
+      >
+        <span
+          className={styles.slideProgressFill}
+          style={{ width: `${(progressStep / progressTotal) * 100}%` }}
+        />
+      </div>
     </section>
   );
 }
