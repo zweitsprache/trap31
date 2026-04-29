@@ -263,6 +263,14 @@
   line-height: 1.35;
 }
 
+.bodyMarkerSize {
+  width: 100%;
+  margin: 0;
+  color: var(--color-module);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
 .slide.accentSlide {
   background: #5A6B3E;
   gap: 20px;
@@ -484,7 +492,7 @@
 .markerText {
   margin: 0;
   color: var(--color-module);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.65;
 }
 

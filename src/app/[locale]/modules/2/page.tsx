@@ -56,7 +56,7 @@ export default async function ModuleTwoPage({
           <SlideBrand />
           <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
           <p className={styles.storyLabel}>WARUM FÜHLST DU DICH ALLEIN?</p>
-          <p className={styles.bodyLarge}>
+          <p className={styles.bodyMarkerSize}>
             Wenn wir etwas sehr Schweres erlebt haben, passieren oft zwei Dinge gleichzeitig:
           </p>
           <div className={styles.markerGroup}>
