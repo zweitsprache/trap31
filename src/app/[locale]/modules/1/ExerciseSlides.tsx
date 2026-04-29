@@ -79,6 +79,9 @@ export default function ExerciseSlides({ steps, progressStep, progressTotal }: P
       <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
       <p className={styles.storyLabel}>ÜBUNG</p>
       <p className={styles.exerciseName}>Deinen inneren Helfer beruhigen</p>
+        <p className={styles.exerciseHint}>
+          Mache diese Übung an einem Ort, an dem Du Dich wohl und sicher fühlst. Du kannst sitzen, stehen oder liegen.
+        </p>
       <video
         ref={videoRef}
         className={styles.video}

@@ -159,29 +159,7 @@ export default async function ModuleOneV2Page({
         <section className={styles.slide}>
           <SlideBrand />
           <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
-          <div className={styles.reflection}>
-            <p>
-              Gibt es eine Reaktion aus der Liste oben, die Du bei Dir kennst? Du
-              musst nichts aufschreiben. Es reicht, wenn Du kurz bei Dir nachspürst.
-            </p>
-          </div>
-          <div className={styles.safety}>
-            <p>
-              Falls Du Dich nach diesem Modul unwohl fühlst: Mach eine Pause. Tu
-              etwas, das Dir gut tut.
-            </p>
-            <p>
-              <strong>Dargebotene Hand</strong> 143 - täglich, 24h
-            </p>
-          </div>
-          <div className={styles.actions}>
-            <Link className={styles.actionLink} href={`/${locale}/modules/1`}>
-              Original öffnen
-            </Link>
-            <Link className={styles.actionLink} href={`/${locale}/modules`}>
-              Zur Übersicht
-            </Link>
-          </div>
+          <p className={styles.storyLabel}>WIE GEHT ES WEITER?</p>
           <SlideProgress current={11} total={totalSlides} />
         </section>
       </div>
