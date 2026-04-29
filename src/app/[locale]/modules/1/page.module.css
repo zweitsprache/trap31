@@ -147,7 +147,7 @@
 }
 
 .slide:first-child {
-  background: #5C4433;
+  background: #231811;
 }
 
 .slide:first-child::before,
@@ -163,6 +163,13 @@
   background-position: center center;
   opacity: 0.06;
   z-index: 0;
+}
+
+.slide:first-child::before {
+  background-image: url('/visuals/gemini-image-2_this_man_seen_from_behind_touching_stones_at_the_riverside_in_autumn_mid_close_u-0.jpg');
+  background-size: cover;
+  background-position: right center;
+  opacity: 0.28;
 }
 
 .slide:first-child > *:not(.slideLogo):not(.slideBrand):not(.bgNumber),
@@ -751,9 +758,8 @@
 
 .bgNumber {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 0.08em;
+  bottom: 0.04em;
   font-size: clamp(320px, 90vw, 700px);
   font-weight: 900;
   line-height: 1;
