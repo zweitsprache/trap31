@@ -10,7 +10,9 @@ export default function LocaleSwitcher() {
   const router = useRouter();
 
   const handleChange = (newLocale: string) => {
-    const path = window.location.pathname.split("/").slice(2).join("/") || "";
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    const hasLocalePrefix = locales.includes(segments[0] as (typeof locales)[number]);
+    const path = hasLocalePrefix ? segments.slice(1).join("/") : segments.join("/");
     router.push(`/${newLocale}${path ? "/" + path : ""}`);
   };
 
