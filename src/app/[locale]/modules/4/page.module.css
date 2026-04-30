@@ -1,0 +1,156 @@
+.screen {
+  background: #faf6f0;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.slider {
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  position: relative;
+  overflow: hidden;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 28px;
+  padding-block: 90px 28px;
+}
+
+.slideLogo {
+  position: absolute;
+  inset-block-start: 20px;
+  inset-inline-end: 24px;
+  block-size: 28px;
+  width: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.slideBrand {
+  position: absolute;
+  inset-block-start: 34px;
+  inset-inline-start: 24px;
+  transform: translateY(-50%);
+  margin: 0;
+  color: #111111;
+  font-family: var(--font-sans-condensed), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.slideBrandPrimary {
+  font-weight: 800;
+}
+
+.slideBrandSecondary {
+  font-weight: 400;
+}
+
+.slide:nth-child(odd) {
+  background: linear-gradient(180deg, #faf6f0 0%, #f5eddc 100%);
+}
+
+.slide:nth-child(even) {
+  background: linear-gradient(180deg, #faf6f0 0%, #f1e8d2 100%);
+}
+
+.slide:first-child {
+  background: #231811;
+}
+
+.slide:first-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/visuals/nano-banana-2_this_man_seen_from_behind_sitting_on_a_windowsill_looking_out_at_soft_morning_li-0 (1).jpg');
+  background-size: cover;
+  background-position: right center;
+  opacity: 0.28;
+  z-index: 0;
+}
+
+.slide:first-child > *:not(.slideLogo):not(.slideBrand):not(.bgNumber) {
+  position: relative;
+  z-index: 1;
+}
+
+.slide:first-child .slideBrand,
+.slide:first-child .h1,
+.slide:first-child .sub {
+  color: #faf6f0;
+}
+
+.h1 {
+  width: 100%;
+  margin: 0;
+  color: #3d2b1f;
+  font-family: var(--font-sans-condensed), system-ui, sans-serif;
+  font-size: clamp(30px, 7.6vw, 40px);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.sub {
+  width: 100%;
+  margin: 10px 0 0;
+  color: #7a5c48;
+  font-size: 16px;
+}
+
+.bodyText {
+  width: 100%;
+  margin: 0;
+  color: #3d2b1f;
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.actions {
+  width: 100%;
+  margin-block-start: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.actionLink {
+  border-radius: 8px;
+  background: #5c4433;
+  color: #faf6f0;
+  padding: 10px 12px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.bgNumber {
+  position: absolute;
+  right: 0.08em;
+  bottom: 0.04em;
+  font-size: clamp(320px, 90vw, 700px);
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}

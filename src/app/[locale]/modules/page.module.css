@@ -204,6 +204,7 @@
   color: #faf6f0;
   font-family: var(--font-sans-condensed), system-ui, sans-serif;
   font-size: 18px;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -212,7 +213,7 @@
   z-index: 1;
   margin: 0;
   color: rgba(250, 246, 240, 0.78);
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.35;
 }
 

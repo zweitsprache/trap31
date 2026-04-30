@@ -100,7 +100,7 @@
 }
 
 .slide:first-child {
-  background: #A65A3E;
+  background: #231511;
 }
 
 .slide:first-child::before,
@@ -116,6 +116,13 @@
   background-position: center center;
   opacity: 0.06;
   z-index: 0;
+}
+
+.slide:first-child::before {
+  background-image: url('/visuals/nano-banana-2_this_man_seen_from_behind_in_soft_profile_sitting_on_a_bench._Eyes_closed_one_ha-0.jpg');
+  background-size: cover;
+  background-position: right center;
+  opacity: 0.28;
 }
 
 .slide:first-child > *:not(.slideLogo):not(.slideBrand):not(.bgNumber),
@@ -144,7 +151,7 @@
 }
 
 .slide.merksatzSlide {
-  background: #A65A3E;
+  background: #825548;
   background-image: none;
 }
 
@@ -200,14 +207,14 @@
 
 .quote p {
   margin: 0;
-  color: #A65A3E;
+  color: #825548;
   font-family: var(--font-sans-condensed), system-ui, sans-serif;
   font-size: clamp(24px, 6vw, 34px);
   line-height: 1.35;
 }
 
 .quoteNeutral p {
-  color: #A65A3E;
+  color: #825548;
 }
 
 .sectionLabel {
@@ -451,9 +458,8 @@
 
 .bgNumber {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 0.08em;
+  bottom: 0.04em;
   font-size: clamp(320px, 90vw, 700px);
   font-weight: 900;
   line-height: 1;

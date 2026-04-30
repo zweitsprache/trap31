@@ -37,7 +37,7 @@ const cards: ModuleCard[] = [
     title: "Hier und jetzt ankommen",
     subtitle: "Spüren, dass dieser Moment sicher ist",
     accent: "#846940",
-    href: "#",
+    href: "/modules/4",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const cards: ModuleCard[] = [
     subtitle: "Lernen, wie Du Dir Ruhe schenkst",
     accent: "#475862",
     cool: true,
-    href: "#",
+    href: "/modules/6",
   },
 ];
 
