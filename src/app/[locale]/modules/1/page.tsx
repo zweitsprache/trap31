@@ -25,10 +25,10 @@ function SlideProgress({ current, total }: { current: number; total: number }) {
 
 function SlideBrand() {
   return (
-    <p className={styles.slideBrand}>
+    <Link href="/" className={styles.slideBrand}>
       <span className={styles.slideBrandPrimary}>arivio</span>
       <span className={styles.slideBrandSecondary}> | Willkommen bei Dir</span>
-    </p>
+    </Link>
   );
 }
 

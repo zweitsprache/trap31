@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 import styles from "./page.module.css";
 
@@ -61,10 +62,10 @@ export default function ReactionSlides({ chips, progressStep, progressTotal }: P
 
   return (
     <section className={`${styles.slide} ${styles.reactionSlide}`}>
-      <p className={styles.slideBrand}>
+      <Link href="/" className={styles.slideBrand}>
         <span className={styles.slideBrandPrimary}>arivio</span>
         <span className={styles.slideBrandSecondary}> | Willkommen bei Dir</span>
-      </p>
+      </Link>
       <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
       <p className={styles.storyLabel}>KENNST DU DAS?</p>
       <div

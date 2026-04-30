@@ -68,10 +68,10 @@ export default async function ModulesPage({
       <div className={styles.hero}>
         <div className={styles.heroOverlay} />
         <div className={styles.topBar}>
-          <p className={styles.slideBrand}>
+          <Link href="/" className={styles.slideBrand}>
             <span className={styles.slideBrandPrimary}>arivio</span>
-          </p>
-          <img src="/logos/sihlspace_003a_orange.svg" alt="" className={styles.slideLogo} />
+          </Link>
+          <img src="/logos/sihlspace_003a_white.svg" alt="" className={styles.slideLogo} />
         </div>
         <header className={styles.head}>
           <p className={styles.eyebrow}>EINE REISE IN SECHS SCHRITTEN</p>

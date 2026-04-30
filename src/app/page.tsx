@@ -10,7 +10,7 @@ const languageOptions: LanguageOption[] = [
   ...locales.map((locale) => ({
     key: locale,
     label: localeNames[locale],
-    href: `/${locale}`,
+    href: `/${locale}/gender`,
   })),
   ...Array.from({ length: 15 }, (_, index) => ({
     key: `placeholder-${index + 4}`,
@@ -21,58 +21,28 @@ const languageOptions: LanguageOption[] = [
 export default function RootPage() {
   return (
     <main className={styles.screen}>
-      <div className={styles.bgIllu} aria-hidden="true">
-        <svg viewBox="0 0 380 760" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M-20 280 Q80 220 180 250 Q280 280 410 220"
-            fill="none"
-            stroke="#E8D5B0"
-            strokeWidth="48"
-            strokeLinecap="round"
-            opacity="0.45"
-          />
-          <path
-            d="M-20 310 Q90 240 180 272 Q280 304 410 244"
-            fill="none"
-            stroke="#E8D5B0"
-            strokeWidth="22"
-            strokeLinecap="round"
-            opacity="0.3"
-          />
-          <path
-            d="M-20 248 Q70 200 180 224 Q280 248 410 200"
-            fill="none"
-            stroke="#C4673A"
-            strokeWidth="9"
-            strokeLinecap="round"
-            opacity="0.16"
-          />
-          <path
-            d="M-20 700 Q90 660 200 680 Q310 700 420 660"
-            fill="none"
-            stroke="#E8D5B0"
-            strokeWidth="38"
-            strokeLinecap="round"
-            opacity="0.4"
-          />
-          <path
-            d="M-20 720 Q90 686 200 706 Q310 724 420 690"
-            fill="none"
-            stroke="#E8D5B0"
-            strokeWidth="18"
-            strokeLinecap="round"
-            opacity="0.28"
-          />
-        </svg>
+      <div className={styles.bgImg} aria-hidden="true" />
+      <div className={styles.bgOverlay} aria-hidden="true" />
+
+      <div className={styles.topBar}>
+        <Link href="/" className={styles.brand}>
+          <span className={styles.brandPrimary}>arivio</span>
+        </Link>
+        <img src="/logos/sihlspace_003a_white.svg" alt="" className={styles.logo} />
       </div>
 
       <section className={styles.panel}>
-        <p className={styles.wordmark}>arivio</p>
+        <p className={styles.wordmark}>Willkommen<br />bei Dir</p>
         <div className={styles.languageGrid}>
           {languageOptions.map((option) => (
             option.href ? (
               <Link key={option.key} href={option.href} className={styles.languageCard}>
-                {option.label}
+                <span className={styles.languageStack}>
+                  {option.key !== "de" ? (
+                    <span className={styles.languageCode}>{option.key.toUpperCase()}</span>
+                  ) : null}
+                  <span>{option.label}</span>
+                </span>
               </Link>
             ) : (
               <div key={option.key} className={`${styles.languageCard} ${styles.placeholderCard}`}>

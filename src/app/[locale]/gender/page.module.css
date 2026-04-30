@@ -69,9 +69,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 40px;
   padding-block: 40px;
-  padding-inline: 32px;
+  padding-inline: 28px;
 }
 
 .wordmark {
@@ -85,62 +85,50 @@
   line-height: 1.2;
 }
 
-.quote {
+.wordmark {
   margin: 0;
   color: #faf6f0;
   text-align: center;
   font-family: var(--font-sans-condensed), system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: clamp(22px, 5vw, 36px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
-.quote p {
-  margin: 0 0 6px;
-  color: #faf6f0;
+.genderGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 8px;
+  width: 100%;
 }
 
-.quote p:last-child {
-  margin: 0;
-}
-
-.startCta {
-  display: inline-block;
+.genderBtn {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
-  padding-inline: 32px;
-  padding-block: 14px;
-  background: #c4673a;
-  color: #faf6f0;
-  font-family: var(--font-sans-condensed), system-ui, sans-serif;
-  font-size: 16px;
-  text-decoration: none;
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-.startCta:hover,
-.startCta:focus-visible {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(130, 63, 35, 0.4);
+.genderBtn:hover,
+.genderBtn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  outline: none;
 }
 
-@keyframes riseIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.genderBtn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(196, 103, 58, 0.8);
 }
 
-
-@keyframes riseIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.genderBtnImg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
 }

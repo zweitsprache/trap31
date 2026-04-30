@@ -1,14 +1,12 @@
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
 import styles from "./page.module.css";
 
-export default async function Home({
+export default async function GenderPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "home" });
 
   return (
     <main className={styles.screen}>
@@ -23,15 +21,19 @@ export default async function Home({
       </div>
 
       <section className={styles.panel}>
-        <h1 className={styles.wordmark}>Willkommen<br />bei Dir</h1>
-        <div className={styles.quote}>
-          <p>{t("body1")}</p>
-          <p>{t("body2")}</p>
-          <p>{t("body3")}</p>
+        <h1 className={styles.wordmark}>Wer darf Dich heute begleiten?</h1>
+
+                <div className={styles.genderGrid}>
+          {Array.from({ length: 12 }).map((_, i) => (
+            <Link key={i} href={`/${locale}`} className={styles.genderBtn} aria-label={`Option ${i + 1}`}>
+              <div
+                className={styles.genderBtnImg}
+                style={{ backgroundImage: "url('/visuals/gemini-image-2_this_man_sitting_crosslegged_on_the_room_s_floor_smiling_gently_mid_close_up-0 (1).jpg')" }}
+                aria-hidden="true"
+              />
+            </Link>
+          ))}
         </div>
-        <Link className={styles.startCta} href={`/${locale}/modules`}>
-          {t("cta")}
-        </Link>
       </section>
     </main>
   );
